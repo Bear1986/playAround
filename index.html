@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>VueJS Course</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <body>
+    <div id="app" v-cloak>
+      <p>{{ fullName }}</p>
+      <p>{{age}}</p>
+      <hr />
+
+      <label>First Name</label>
+      <input type="text" :value.lazy.trim="firstName" />
+
+      <label>Middle Name</label>
+      <!-- the middlename updates when I push the enter key -->
+      <input type="text" @keyup.enter="updateMiddleName" />
+
+      <label>Last Name</label>
+      <input
+        type="text"
+        :value="lastName"
+        @input.prevent="updateLastName('last name event triggered!',$event)"
+      />
+
+      <label>Age</label>
+      <input type="number" v-model="age"/>
+
+      <p>
+        <!-- below you can add something called v-bind: which will give your 
+        Html a dnynamic value or you can just add : and vue will atomatically 
+      make it dnynamic-->
+        <a :href="url"> Google </a>
+      </p>
+      <p>below is the same tag but outputted in raw HTML</p>
+      <p v-html="raw_url"></p>
+      <br />
+      <p>this is a counter with dnynamic data</p>
+      <p>{{num}}</p>
+      <button type="button" @click="increment">Increment</button>
+      <button type="button" @click="decrement">Decrement</button>
+    </div>
+    <!-- this is the vue CDN -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+body {
+  font-size: 22px;
+  disply: flex;
+  justify-content: center;
+}
+
+input[type="text"] {
+  margin: 10px 0;
+  display: block;
+}
+
+/* this allows slow brousers 
+to display nothing untill the whole page 
+is loaded  fint this in index line 9*/
+
+[v-cloak] {
+  display: none;
+}
